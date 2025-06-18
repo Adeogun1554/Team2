@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/Team2-HEALCEware/static/css/main.e6c13ad2.css",
-    "main.js": "/Team2-HEALCEware/static/js/main.39b9002e.js",
+    "main.js": "/Team2-HEALCEware/static/js/main.2c92db6a.js",
     "static/js/453.a3c1d153.chunk.js": "/Team2-HEALCEware/static/js/453.a3c1d153.chunk.js",
     "index.html": "/Team2-HEALCEware/index.html",
     "main.e6c13ad2.css.map": "/Team2-HEALCEware/static/css/main.e6c13ad2.css.map",
-    "main.39b9002e.js.map": "/Team2-HEALCEware/static/js/main.39b9002e.js.map",
+    "main.2c92db6a.js.map": "/Team2-HEALCEware/static/js/main.2c92db6a.js.map",
     "453.a3c1d153.chunk.js.map": "/Team2-HEALCEware/static/js/453.a3c1d153.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e6c13ad2.css",
-    "static/js/main.39b9002e.js"
+    "static/js/main.2c92db6a.js"
   ]
 }
