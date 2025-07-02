@@ -23,6 +23,9 @@ fastjsonschema==2.21.1
 filelock==3.13.1
 fonttools==4.56.0
 fqdn==1.5.1
+flask
+flask-cors
+
 fsspec==2024.6.1
 gitdb==4.0.12
 GitPython==3.1.44
