@@ -1,12 +1,10 @@
-# Team2 – SkillSwap+
+# Team2 – HALCEware Review App
 
 ## Project Overview
-SkillSwap+ is a full-stack web platform designed for GSU students to exchange skills, request help, and discover career opportunities. It’s a mix of peer-to-peer service exchange and a career launchpad.
+HALCEware is a web-based review platform that allows users to post honest reviews about businesses, services, or products. The goal is to provide a transparent and user-friendly space for feedback and discovery, similar in spirit to Yelp or Google Reviews.
 
 ## Team Members
 - Chelsea Guthridge
-- Lilly Ngo
-- Antonio Scott
 - Heavena LeShore
 - Emmanuel Adeogun
 
