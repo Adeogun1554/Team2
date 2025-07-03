@@ -1,6 +1,10 @@
 import axios from 'axios';
 
-const API_URL = 'https://congenial-giggle-q76pprr6wpqv369wq-5000.app.github.dev/api/reviews';
+// Use environment variable for flexibility
+const API_URL = process.env.REACT_APP_API_URL;
 
-export const getReviews = () => axios.get(API_URL);
-export const postReview = (review) => axios.post(API_URL, review);
+// GET all reviews
+export const getReviews = () => axios.get(`${API_URL}/api/reviews`);
+
+// POST a new review
+export const postReview = (review) => axios.post(`${API_URL}/api/reviews`, review);
