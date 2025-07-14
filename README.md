@@ -14,11 +14,11 @@ HALCEware is a web-based review platform for users to post honest reviews about 
 - '/docs' → Planning, diagrams, database schema
 
 ## Features (MVP)
--Skill-based listings (offer or request)
--GSU-only login
--Messaging between users
--Skill Points + Reviews
--Job portal (Phase 2)
+- Skill-based listings (offer or request)
+- GSU-only login
+- Messaging between users
+- Skill Points + Reviews
+- Job portal (Phase 2)
 
 ## Tech Stack
 -Frontend: React.js
