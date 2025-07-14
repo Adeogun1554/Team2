@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import "./App.css";  // ✅ Make sure this is included
+import "./App.css"; // Ensure this is present for styling
 
 const API_URL = "https://halceware.onrender.com/api/reviews";
-
 
 function App() {
   const [reviews, setReviews] = useState([]);
@@ -15,57 +14,78 @@ function App() {
   });
 
   useEffect(() => {
-    axios.get(API_URL).then((res) => setReviews(res.data));
+    axios.get(API_URL)
+      .then((res) => setReviews(res.data))
+      .catch((err) => console.error("Error fetching reviews:", err));
   }, []);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: name === "rating" ? parseInt(value) : value,
+    }));
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await axios.post(API_URL, formData);
-    setFormData({ name: "", message: "", category: "Product", rating: 5 });
-    const res = await axios.get(API_URL);
-    setReviews(res.data);
+    try {
+      await axios.post(API_URL, formData);
+      setFormData({ name: "", message: "", category: "Product", rating: 5 });
+      const res = await axios.get(API_URL);
+      setReviews(res.data);
+    } catch (error) {
+      console.error("Error submitting review:", error);
+    }
   };
 
   return (
-    <div className="container">
+    <div className="App">
       <h1>HALCEware Review App</h1>
       <form onSubmit={handleSubmit}>
         <input
-          type="text"
-          placeholder="Your name"
+          name="name"
           value={formData.name}
-          onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+          onChange={handleChange}
+          placeholder="Your name"
+          required
         />
         <textarea
-          placeholder="Your review"
+          name="message"
           value={formData.message}
-          onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+          onChange={handleChange}
+          placeholder="Your review"
+          required
         />
         <select
+          name="category"
           value={formData.category}
-          onChange={(e) => setFormData({ ...formData, category: e.target.value })}
+          onChange={handleChange}
         >
-          <option value="Product">Product</option>
-          <option value="Service">Service</option>
-          <option value="Business">Business</option>
+          <option>Product</option>
+          <option>Service</option>
+          <option>Experience</option>
         </select>
         <input
           type="number"
+          name="rating"
+          value={formData.rating}
           min="1"
           max="5"
-          value={formData.rating}
-          onChange={(e) => setFormData({ ...formData, rating: e.target.value })}
+          onChange={handleChange}
         />
         <button type="submit">Submit Review</button>
       </form>
 
       <h2>All Reviews</h2>
-      {reviews.map((review, index) => (
-        <div className="review-card" key={index}>
-          <strong>{review.name}</strong> rated <b>{review.rating}</b>/5 for <em>{review.category}</em>
-          <p>{review.message}</p>
-        </div>
-      ))}
+      <ul>
+        {reviews.map((rev, index) => (
+          <li key={index}>
+            <strong>{rev.name}</strong> ({rev.category}) - {rev.rating}/5<br />
+            {rev.message}
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }
