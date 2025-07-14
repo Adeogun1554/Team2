@@ -52,14 +52,6 @@ python -m venv venv
 source venv/bin/activate # On Windows: .\venv\Scripts\activate
 pip install -r requirements.txt
 
-## 3. Configuration (Environment Variables)
-You'll need to set up environment variables for the backend.
-In the /server directory, create a file named .env.
-Add necessary variables like your database URL or any secret keys.
-Example /.env content:
-DATABASE_URL=postgresql://user:password@localhost:5432/halceware_db
-SECRET_KEY=your_flask_secret_key
-Adjust variables based on whether you're using PostgreSQL or Firebase, and any other specific Flask settings.
 
 ## 4. Running the Application
 Open two separate terminal windows for the frontend and backend.
